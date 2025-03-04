@@ -33,7 +33,7 @@ resource aksKeyVaultFederatedCredentials 'Microsoft.ManagedIdentity/userAssigned
   parent: azurekeyvaultsecretsproviderJnbAks
   properties: {
     issuer: issuerUrl
-    subject: 'system:serviceaccount:external-secrets:jnb-ask-kv-identity-sa'
+    subject: 'system:serviceaccount:poc-external-secrets:jnb-ask-kv-identity-sa'
     audiences: [
       'api://AzureADTokenExchange'
     ]

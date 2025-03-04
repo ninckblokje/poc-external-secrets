@@ -25,13 +25,13 @@
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: jnb-keyvault-certs-external-secrets
-  namespace: external-secrets
+  name: jnb-keyvault-certs
+  namespace: poc-external-secrets
 spec:
   refreshInterval: 5m
   secretStoreRef:
     kind: SecretStore
-    name: keyvault-secret-store
+    name: jnb-keyvault-secret-store
   target:
     template:
       type: kubernetes.io/tls
