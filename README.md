@@ -29,3 +29,8 @@ Combined with [reloader](https://github.com/stakater/Reloader) pods can get auto
 ### reloader
 
 1. Install `reloader` using the helm chart: `helm install reloader stakater/reloader -n reloader --create-namespace`
+
+### demo-app
+
+1. Build the `demo-app` project
+1. Deploy it to Kubernetes: `kubectl apply -n poc-external-secrets -f demo-app/target/kubernetes/kubernetes.yml`

@@ -1,0 +1,1 @@
+GET http://localhost:8080/api/secrets/test-secret-1
