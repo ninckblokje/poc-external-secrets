@@ -24,4 +24,4 @@
 
 using './jnb-aks-mi-keyvault.bicep'
 
-param issuerUrl =  'https://westeurope.oic.prod-aks.azure.com/015f3d3c-5f35-4fee-84e6-19e4e7972664/23835994-104f-4c99-9f15-c347d9b340cd/'
+param issuerUrl =  'https://westeurope.oic.prod-aks.azure.com/015f3d3c-5f35-4fee-84e6-19e4e7972664/21e2fdf8-2d04-4910-93e8-043515ce9091/'

@@ -16,15 +16,18 @@ Combined with [reloader](https://github.com/stakater/Reloader) pods can get auto
    - VNet
    - Key vault
    - AKS
+1. Create the namespace `poc-external-secrets`: `kubectl create ns poc-external-secrets`
 1. Install using the helm chart: `helm install external-secrets external-secrets/external-secrets -n external-secrets --create-namespace`
 1. Create a service connection: `New-AzResourceGroupDeployment -ResourceGroupName speeltuin-jnb -TemplateFile ./jnb-aks-sc-keyvault.bicep -Confirm`
-1. Create a secret store & service account: `kubectl apply -f keyvault-secret-store.yaml`
+1. Create a secret store & service account: `kubectl apply -f jnb-keyvault-secret-store.yaml`
+   - Set the correct client id in the file `jnb-keyvault-secret-store.yaml`
 1. Link service account to managed identity with federated credentials: `New-AzResourceGroupDeployment -ResourceGroupName MC_speeltuin-jnb_jnb-aks_westeurope -TemplateFile ./jnb-aks-mi-keyvault.bicep -TemplateParameterFile ./jnb-aks-mi-keyvault.bicepparam -Confirm`
+   - Set the correct issuer URL in the file `jnb-aks-mi-keyvault.bicepparam`
 1. Create secret in Key Vault: `test-secret-1`
 1. Create certificate in Key Vault: `test-certificate1`
 1. Create the external secrets:
-   - `kubectl apply -f jnb-keyvault-external-secrets.yaml`
-   - `kubectl apply -f jnb-keyvault-certs-external-secrets.yaml`
+   - `kubectl apply -f jnb-keyvault-secrets.yaml`
+   - `kubectl apply -f jnb-keyvault-certs.yaml`
 
 ### reloader
 
